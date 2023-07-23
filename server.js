@@ -1,19 +1,24 @@
 let Express = require("express")
 let server = Express()
-let MySql = require("mysql")
+// let MySql = require("mysql")
 
 server.set("view engine", "ejs")
 
-let db = MySql.createConnection({
-    host: "localhost",
-    user:"root",
-    password:"root",
-    database: "nbs2"
-})
-db.connect()
+// let db = MySql.createConnection({
+//     host: "localhost",
+//     user:"root",
+//     password:"root",
+//     database: "nbs2"
+// })
+// db.connect()
 
 server.get("/", (req,res)=>{
     res.render("index.ejs")
+    res.end()
+})
+
+server.get("/createpost", (req,res)=>{
+    res.render("createpost.ejs")
     res.end()
 })
 
